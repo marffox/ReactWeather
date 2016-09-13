@@ -13,7 +13,7 @@ module.exports = About;
 
 var About = (props) => {
 	return (
-		<h3>About component</h3>
+		<h3>Welcome to About page</h3>
 	);
 };
 
