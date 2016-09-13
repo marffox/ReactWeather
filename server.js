@@ -5,7 +5,7 @@ var app = express();
 const PORT = process.env.PORT || 3000;
 
 //heroku usa urls https y la request que nosotros hacemos para la api de weather es http. Con esto
-//hacemos la conversion
+//hacemos la conversion de https a http
 app.use(function(req, res, next) {
 	if (req.headers['x-forwarded-proto'] === 'http') {
 		next();
