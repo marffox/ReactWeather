@@ -14,7 +14,13 @@ var Examples = require('Examples');
 // };
 
 // var {name, surname} = obj;
-// console.log(name, surname); output -> Rafael Marfil. Igual que -> var name = obj.name; 
+// console.log(name, surname); output -> Rafael Marfil. Igual que -> var name = obj.name;
+
+//Load foundation
+require('style!css!foundation-sites/dist/foundation.min.css');
+//css es el loader para usar foundation
+//style es el loader para inyectar el css en el documento
+$(document).foundation();
 
 ReactDOM.render(
 	<Router history={hashHistory}>
