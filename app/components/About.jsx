@@ -9,12 +9,22 @@ var React = require('react');
 // 	}
 // });
 
-module.exports = About;
-
 var About = (props) => {
 	return (
-		<h3>Welcome to About page</h3>
-	);
+		<div>
+			<h1>About</h1>
+			<p className="text-center">This is a weather application build on React.</p>
+			<p>Here are some of the tools I used:</p>
+			<ul>
+				<li>
+					<a href="https://facebook.github.io/react">React</a> - This was the JavaScript framework used.
+				</li>
+				<li>
+					<a href="http://openweathermap.org">Open weather map</a> - I used Open Weather Map to search for weather data by city name.
+				</li>
+			</ul>
+		</div>
+	)
 };
 
 module.exports = About;
