@@ -22,6 +22,12 @@ require('style!css!foundation-sites/dist/foundation.min.css');
 //style es el loader para inyectar el css en el documento
 $(document).foundation();
 
+//App css
+require('style!css!applicationStyles');
+//style: es para que el css se inyecte en el html
+//css: es el loader
+//lo ultimo es el alias que creo en webpack
+
 ReactDOM.render(
 	<Router history={hashHistory}>
   		<Route path="/" component={Main}>
