@@ -18,8 +18,6 @@ var {Link, IndexLink} = require('react-router');
 // 	}
 // });
 
-var React = require('react');
-
 var Nav = React.createClass({
 	displayName: 'Nav',
 	onSearch: function (e) {

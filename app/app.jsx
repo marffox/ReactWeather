@@ -23,7 +23,7 @@ require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
 //App css
-require('style!css!applicationStyles');
+require('style!css!sass!applicationStyles');
 //style: es para que el css se inyecte en el html
 //css: es el loader
 //lo ultimo es el alias que creo en webpack
