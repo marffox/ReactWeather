@@ -12,7 +12,6 @@ module.exports = {
 		usamos encodeURIComponent para para que el navegador entienda los caracteres como espacios (%20) u otros que pueda haber en la url*/
 
 		return axios.get(requestUrl).then(function (res) { /*axios.get es una promise, aqui, en caso success*/
-			debugger;
 			if (res.data.cod && res.data.message) {
 				throw new Error(res.data.message);
 			} else {

@@ -17,7 +17,9 @@ var Weather = React.createClass({
 
 		this.setState({
 			isLoading: true,
-			errorMessage: undefined
+			errorMessage: undefined,
+			location: undefined,
+			temp: undefined
 		});
 
 		openWeatherMap.getTemp(location).then(function (temp) {
@@ -34,6 +36,23 @@ var Weather = React.createClass({
 				errorMessage: e.message
 			});
 		});
+	},
+	componentDidMount: function () {
+		var location = this.props.location.query.location;
+
+		if (location && location.length > 0) {
+			this.handleSearch(location);
+			window.location.hash = '#/';//borra location de la barra de navegacion del browser
+		}
+	},
+	//En React component puede cambiar los estados pero no puede cambiar las props, pero si puede cambiar las props de sus hijos
+	componentWillReceiveProps: function (newProps) {
+	  	var location = newProps.location.query.location;
+
+		if (location && location.length > 0) {
+			this.handleSearch(location);
+			window.location.hash = '#/';//borra location de la barra de navegacion del browser
+		}
 	},
 	render: function () {
 		var {hasError, isLoading, temp, location, errorMessage} = this.state;
