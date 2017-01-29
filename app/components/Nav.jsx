@@ -1,30 +1,13 @@
 var React = require('react');
 var {Link, IndexLink} = require('react-router');
 
-// var Nav = React.createClass({
-// 	displayName: 'Navigation',
-// 	render: function() {
-// 		return (
-// 			<div>
-// 				<h2>Nav component</h2>
-// 				<IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink>
-// 				{IndexLink permite que el estilo que apliquemos al indes "/" sea anulado cuando clikamos en otro link,
-// 				sin esto, el link de la pagina principal siempre estaria en bold ya que "/" siempre esta presente.
-// 				React hace match entre el valor de "to" y la ruta del navegador.}
-// 				<Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
-// 				<Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>
-// 			</div>
-// 		);
-// 	}
-// });
 
 var Nav = React.createClass({
 	displayName: 'Nav',
 	onSearch: function (e) {
 		e.preventDefault();
 		var location = this.refs.search.value;
-		var encodedLocation = encodeURIComponent(location);//codificamos el string de location para que sea valido en la
-		//barra de navegacion del browser, por si tiene espacios (añade %20)
+		var encodedLocation = encodeURIComponent(location);
 
 		if (location.length > 0) {
 			this.refs.search.value = '';

@@ -8,16 +8,14 @@ module.exports = {
 		var encodedLocation = encodeURIComponent(location);
 		var requestUrl = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
 
-		/*usando estas comillas `` podemos inyectar codigo javascript dentro del codigo de react
-		usamos encodeURIComponent para para que el navegador entienda los caracteres como espacios (%20) u otros que pueda haber en la url*/
 
-		return axios.get(requestUrl).then(function (res) { /*axios.get es una promise, aqui, en caso success*/
+		return axios.get(requestUrl).then(function (res) {
 			if (res.data.cod && res.data.message) {
 				throw new Error(res.data.message);
 			} else {
 				return res.data.main.temp;
 			}
-		}, function (res) {//aqui en caso error
+		}, function (res) {
 			throw new Error(res.data.message);
 		});
 	}

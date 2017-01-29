@@ -42,16 +42,15 @@ var Weather = React.createClass({
 
 		if (location && location.length > 0) {
 			this.handleSearch(location);
-			window.location.hash = '#/';//borra location de la barra de navegacion del browser
+			window.location.hash = '#/';
 		}
 	},
-	//En React component puede cambiar los estados pero no puede cambiar las props, pero si puede cambiar las props de sus hijos
 	componentWillReceiveProps: function (newProps) {
 	  	var location = newProps.location.query.location;
 
 		if (location && location.length > 0) {
 			this.handleSearch(location);
-			window.location.hash = '#/';//borra location de la barra de navegacion del browser
+			window.location.hash = '#/';
 		}
 	},
 	render: function () {

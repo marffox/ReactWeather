@@ -12,7 +12,7 @@ var ErrorModal = React.createClass({
 		message: React.PropTypes.string.isRequired
 	},
 	componentDidMount: function () {
-		var modal = new Foundation.Reveal($('#error-modal'));//podemos pasar el id o refs
+		var modal = new Foundation.Reveal($('#error-modal'));
 		modal.open();
 	},
 	render: function () {
